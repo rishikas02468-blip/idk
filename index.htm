@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGNOU - Student Services (Results)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ================= SLIDE 1 STYLES ================= */
+    #slide-1 {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f5f6f8;
+    }
+
+    .top-utility-bar {
+      background-color: #0b395c;
+      color: #ffffff;
+      padding: 6px 15px;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+      padding-right: 12px;
+      border-right: 1px solid rgba(255,255,255,0.4);
+      margin-right: 12px;
+    }
+
+    .social-circle {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .aws-text {
+      color: #f4d03f;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .main-header {
+      background-color: #0b4a78;
+      color: white;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ignou-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255,255,255,0.4);
+      padding-right: 10px;
+    }
+
+    .ignou-text-en {
+      line-height: 1.1;
+    }
+    .ignou-text-en strong {
+      font-size: 20px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+    .ignou-text-en span {
+      font-size: 7.5px;
+      display: block;
+      letter-spacing: 0.3px;
+    }
+
+    .ignou-circle-emblem {
+      width: 34px;
+      height: 34px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .ignou-text-hi {
+      line-height: 1.1;
+    }
+    .ignou-text-hi strong {
+      font-size: 17px;
+      display: block;
+    }
+    .ignou-text-hi span {
+      font-size: 8px;
+      display: block;
+    }
+
+    .badges-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .naac-badge {
+      background: radial-gradient(circle, #ffd700, #d48806);
+      color: #4a0000;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      font-weight: 800;
+      border: 1.5px solid #fff;
+      text-align: center;
+      line-height: 1;
+    }
+
+    .nirf-badge {
+      background: #ffffff;
+      color: #0b395c;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 800;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      border: 1px solid #ccc;
+    }
+    .nirf-badge span.rank-one {
+      color: #c0392b;
+      font-size: 16px;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 24px;
+      height: 2.5px;
+      background-color: #06263d;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(105deg, rgba(11, 57, 92, 0.92) 0%, rgba(16, 78, 122, 0.78) 60%, rgba(28, 100, 145, 0.65) 100%),
+                  url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .hero-banner h1 {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .hero-banner h1 span {
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 2px;
+    }
+
+    /* Sub Menu Bar */
+    .sub-menu-wrapper {
+      background-color: #ffffff;
+      display: flex;
+    }
+
+    .sub-menu-btn {
+      background-color: #083d63;
+      color: white;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      width: 68%;
+    }
+
+    .sub-menu-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sub-menu-lines div {
+      width: 26px;
+      height: 2.5px;
+      background-color: #fff;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 14px 25px;
+      font-size: 14px;
+      color: #666;
+      background-color: #f8f9fa;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .breadcrumb span.active {
+      color: #111;
+      font-weight: 600;
+    }
+
+    /* Main Content Card */
+    .content-area {
+      padding: 20px 15px;
+      flex: 1;
+    }
+
+    .results-box {
+      background-color: #ffffff;
+      border-radius: 6px;
+      padding: 18px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .results-tab-header {
+      border-bottom: 1px solid #0b4a78;
+      margin-bottom: 18px;
+    }
+
+    .results-tab {
+      display: inline-block;
+      background-color: #0b4a78;
+      color: #ffffff;
+      padding: 8px 18px;
+      font-size: 14px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    .links-inner-box {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 24px 20px;
+    }
+
+    .links-inner-box ul {
+      list-style-type: disc;
+      padding-left: 22px;
+    }
+
+    .links-inner-box li {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .links-inner-box li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* First link: visually active color, non-working click */
+    .dead-link {
+      color: #2b3a99;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Second link: leads to Slide 2 */
+    .active-link {
+      color: #2b3a99;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .active-link:hover {
+      text-decoration: underline;
+    }
+
+
+    /* ================= SLIDE 2 & 3 STYLES (GRADE CARD PORTAL) ================= */
+    #slide-2 {
+      display: none;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .gc-header {
+      background-color: #154c79;
+      color: #ffffff;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #0d3556;
+    }
+
+    .gc-logo-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gc-emblem {
+      width: 28px;
+      height: 28px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .gc-logo-text {
+      font-size: 11px;
+      line-height: 1.1;
+    }
+    .gc-logo-text strong {
+      font-size: 14px;
+      display: block;
+    }
+
+    .gc-title-center {
+      text-align: center;
+      flex: 1;
+      padding: 0 5px;
+    }
+
+    .gc-title-center h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      line-height: 1.25;
+    }
+
+    .gc-title-center p {
+      font-size: 10.5px;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .gc-naac-right {
+      background: radial-gradient(circle, #ffcc00, #cc6600);
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 7px;
+      font-weight: bold;
+      color: #000;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .gc-main {
+      flex: 1;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .student-login-card {
+      width: 100%;
+      max-width: 240px;
+      border: 1px solid #b5c7d9;
+      background-color: #ffffff;
+      margin-top: 5px;
+    }
+
+    .login-card-header {
+      background-color: #2b6ca3;
+      color: #ffffff;
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 8px;
+    }
+
+    .login-card-body {
+      padding: 12px 14px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 9.5px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .form-group label span.req {
+      color: red;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 4px 6px;
+      font-size: 10.5px;
+      border: 1px solid #999;
+      border-radius: 2px;
+      background-color: #f8f8f8;
+      color: #111;
+    }
+
+    .search-btn {
+      width: 100%;
+      background-color: #2b6ca3;
+      color: #ffffff;
+      border: none;
+      padding: 5px;
+      font-size: 10px;
+      font-weight: bold;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    .search-btn:hover {
+      background-color: #1f527d;
+    }
+
+    .note-text {
+      margin-top: 8px;
+      font-size: 8.5px;
+      line-height: 1.3;
+      text-align: center;
+      color: #1b7a2e;
+      font-weight: bold;
+    }
+
+    .note-text span.red-label {
+      color: #d93025;
+    }
+
+    .error-msg {
+      color: #d93025;
+      font-size: 9.5px;
+      text-align: center;
+      margin-top: 6px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .gc-footer {
+      background-color: #154c79;
+      color: #ffffff;
+      font-size: 9.5px;
+      padding: 8px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gc-footer div:last-child {
+      text-align: right;
+    }
+
+    /* Desktop adjustment so it scales neatly on wider screens too */
+    @media (min-width: 600px) {
+      .student-login-card {
+        max-width: 340px;
+        margin-top: 30px;
+      }
+      .login-card-header { font-size: 13px; padding: 7px; }
+      .form-group label { font-size: 12px; }
+      .form-control { font-size: 13px; padding: 7px; }
+      .search-btn { font-size: 13px; padding: 8px; }
+      .note-text { font-size: 11px; }
+      .gc-title-center h2 { font-size: 18px; }
+      .gc-title-center p { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= SLIDE 1: STUDENT SERVICES (RESULTS) ================= -->
+  <div id="slide-1">
+    <div class="top-utility-bar">
+      <div class="social-icons">
+        <div class="social-circle">𝕏</div>
+        <div class="social-circle">f</div>
+        <div class="social-circle">▶</div>
+      </div>
+      <div class="aws-text">⛅ IGNOU's AWS</div>
+    </div>
+
+    <header class="main-header">
+      <div class="logo-group">
+        <div class="ignou-brand">
+          <div class="ignou-text-en">
+            <strong>ignou</strong>
+            <span>THE PEOPLE'S<br>UNIVERSITY</span>
+          </div>
+          <div class="ignou-circle-emblem">G</div>
+        </div>
+        <div class="ignou-text-hi">
+          <strong>इग्नू</strong>
+          <span>जन-जन का<br>विश्वविद्यालय</span>
+        </div>
+      </div>
+
+      <div class="badges-group">
+        <div class="naac-badge">
+          <span>A++</span>
+          <span style="font-size:5px;">NAAC</span>
+        </div>
+        <div class="nirf-badge">
+          <span class="rank-one">1</span>nirf
+        </div>
+      </div>
+
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <h1>Student Services<br>(<span>Results</span>)</h1>
+    </section>
+
+    <div class="sub-menu-wrapper">
+      <div class="sub-menu-btn">
+        <div class="sub-menu-lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span>Sub Menu</span>
+      </div>
+    </div>
+
+    <nav class="breadcrumb">
+      <span>🏠 Home</span> / <span>Student Services</span> / <span class="active">Results</span>
+    </nav>
+
+    <main class="content-area">
+      <div class="results-box">
+        <div class="results-tab-header">
+          <div class="results-tab">Results</div>
+        </div>
+        <div class="links-inner-box">
+          <ul>
+            <!-- First link does not work -->
+            <li><a href="javascript:void(0)" class="dead-link">Term End Exam/Re-evaluation Results</a></li>
+            <!-- Second link opens Slide 2 -->
+            <li><a href="javascript:void(0)" class="active-link" onclick="openGradeCardLogin()">Grade Card</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- ================= SLIDE 2 & 3: GRADE CARD LOGIN & COURSE OPTIONS ================= -->
+  <div id="slide-2">
+    <header class="gc-header">
+      <div class="gc-logo-left">
+        <div class="gc-emblem">G</div>
+        <div class="gc-logo-text">
+          <strong>ignou</strong>
+          THE PEOPLE'S<br>UNIVERSITY
+        </div>
+      </div>
+
+      <div class="gc-title-center">
+        <h2>INDIRA GANDHI NATIONAL OPEN UNIVERSITY</h2>
+        <p>GRADE CARD/ MARKS SHEET</p>
+      </div>
+
+      <div class="gc-naac-right">
+        <span>A++</span>
+        <span>NAAC</span>
+      </div>
+    </header>
+
+    <main class="gc-main">
+      <div class="student-login-card">
+        <div class="login-card-header">Student Login</div>
+        <div class="login-card-body">
+          <form onsubmit="handleGradeSearch(event)">
+            <div class="form-group">
+              <label for="course-select">Grade Card<br>Status for <span class="req">*</span></label>
+              <select id="course-select" class="form-control">
+                <option value="">---SELECT---</option>
+                <option value="BCA_MCA">For BCA/MCA/MCA_NEW/MP/MPB/PGDCA/PGDCA_NEW/NEW PROGRAME MBA/MBF</option>
+                <option value="BDP_BSC">For BDP/BA/B.COM/B.Sc./ASSO Programmes</option>
+                <option value="CBCS">For CBCS Programmes</option>
+                <option value="OTHER">For Other Programmes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="enrolment-no">Enrolment<br>No.<span class="req">*</span></label>
+              <input type="text" id="enrolment-no" class="form-control" maxlength="10" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="search-btn">Search</button>
+
+            <div id="error-box" class="error-msg"></div>
+
+            <div class="note-text">
+              <span class="red-label">Note:</span> In case any student is found to be booked under unfairmeans, the result of the particular student will be Cancelled.
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="gc-footer">
+      <div>Indira Gandhi National Open University. All Rights Reserved.</div>
+      <div>Designed, Developed and Maintained by SDC, Computer Division.</div>
+    </footer>
+  </div>
+
+  <script>
+    function openGradeCardLogin() {
+      document.getElementById('slide-1').style.display = 'none';
+      document.getElementById('slide-2').style.display = 'flex';
+      document.title = 'IGNOU Grade Card';
+    }
+
+    function handleGradeSearch(event) {
+      event.preventDefault();
+      const course = document.getElementById('course-select').value;
+      const enrol = document.getElementById('enrolment-no').value.trim();
+      const errorBox = document.getElementById('error-box');
+
+      if (!course) {
+        errorBox.innerText = 'Please select Grade Card Status.';
+        errorBox.style.display = 'block';
+        return;
+      }
+
+      if (enrol === '2551837941') {
+        errorBox.style.display = 'none';
+        // Redirects to the separate fourth slide saved as grade.htm
+        window.location.href = 'grade.htm';
+      } else {
+        errorBox.innerText = 'Invalid Enrolment Number! Please enter 2551837941.';
+        errorBox.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
